@@ -1,3 +1,11 @@
+/**
+ * RootLayout component.
+ * 
+ * This component is responsible for rendering the root layout of the application.
+ * It sets up the theme provider and handles the loading of fonts and splash screen.
+ * 
+ * @returns The rendered RootLayout component.
+ */
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
@@ -30,7 +38,7 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="(chats)" options={{ headerShown: false }} />
+        <Stack.Screen name="(chat)" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );

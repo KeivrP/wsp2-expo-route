@@ -1,35 +1,14 @@
 import { Image, StyleSheet, Platform, FlatList } from 'react-native';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import ChatListItem from '@/components/chats/ChatListItem';
-
-const chats = [{
-  id: "1",
-  user: {
-    image:
-      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/lukas.jpeg",
-    name: "Lukas",
-  },
-  lastMessage: {
-    text: "Oke",
-    createdAt: "07:30",
-  },
-}];
+import chats from '@/querys/data/chats.json';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
+   
          <FlatList
             data={chats}
             renderItem={({ item }) => <ChatListItem chatList={item} />}
     />
-    </ParallaxScrollView>
   );
 }
 

@@ -1,25 +1,25 @@
 import { View, Text, StyleSheet } from "react-native";
 import dayjs from "dayjs";
-import { Colors } from '@/constants/Colors'
+import { Colors } from "@/constants/Colors";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { type Message as MessageType } from "./chats-types";
 dayjs.extend(relativeTime);
-
 interface Props {
-  message: MessageType
+  message: MessageType;
 }
 
-const Message = ({ message } : Props) => {
+const Message = ({ message }: Props) => {
   const isMyMessage = () => {
     return message?.user.id === "u1";
   };
-
   return (
     <View
       style={[
         styles.container,
         {
-          backgroundColor: isMyMessage() ? Colors.light.tabIconSelected : "white",
+          backgroundColor: isMyMessage()
+            ? Colors.light.tabIconSelected
+            : "white",
           alignSelf: isMyMessage() ? "flex-end" : "flex-start",
         },
       ]}
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     maxWidth: "80%",
 
-		// Shadows
-    shadowColor: '#000',
+    // Shadows
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 1,

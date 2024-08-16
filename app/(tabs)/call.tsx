@@ -8,10 +8,8 @@ export default function CallScreen() {
   console.log(navigate);
 
   const touch = () => {
-    router.push('/(chats)/chats');
-
+    console.log('Hey');
   }
-  
 
   return (
     <>

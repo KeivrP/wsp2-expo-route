@@ -1,9 +1,12 @@
   export type User = {
+    id: string,
+    status?: string,
     image: string,
     name: string
   }
 
   export type lastMessage = {
+    id: string,
     text: string,
     createdAt: string
   }
